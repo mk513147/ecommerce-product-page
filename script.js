@@ -23,12 +23,12 @@ let b = document.querySelector('.price').innerText;
 ac.addEventListener('click', () => {
     ai.style.display = 'flex';
     document.querySelector('.empty-cart').style.display = 'none';
+    document.querySelector('.noOfItems').style.width = "1rem";
 })
 
 
 plus.addEventListener('click', () => {
     amt.value = parseInt(amt.value) + 1;
-    document.querySelector('.noOfItems').style.width = "1rem";
     if (amt.value >= 5) {
         alert("Maximum amount reached.")
         amt.value = parseInt(amt.value) - 1;
@@ -68,6 +68,10 @@ document.querySelector('.trash').addEventListener('click', () => {
     ai.style.display = 'none';
     document.querySelector('.empty-cart').style.display = 'grid';
     document.getElementById('amount').value = 0;
+    document.querySelectorAll('.noi').forEach(el =>{
+        el.innerText = amt.value;
+    })
+    document.querySelector('.noOfItems').style.width = "0";
 })
 
 
